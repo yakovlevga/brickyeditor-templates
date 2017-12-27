@@ -1,0 +1,28 @@
+include constants.pug
+
+mixin container(name,  ...classes)
+    -var field = `{ 'name' : '${name}', 'type': 'container' }`
+    -var attrs = { "data-bre-field" : field };
+    div(class=classes)&attributes(attrs)
+
+mixin html(tag, name, content, ...classes)
+    - name = name || 'text'
+    - content = content || name
+    - var field = `{ 'name' : '${name}', 'type': 'html' }`
+    - var attrs = { "data-bre-field" : field };
+    #{tag}(class=classes)&attributes(attrs) #{content}
+
+mixin image(name, url, ...classes)
+    - name = name || 'image'
+    - url = url || loremImage
+    - var field = `{ 'name' : '${name}', 'type': 'image', 'src' : '${url}' }`
+    - var attrs = { "data-bre-field" : field };
+    img(class=classes)&attributes(attrs)
+
+mixin embed()
+    - name = name || 'embed'
+    .h4(style="background: #555; color: #fff; padding: 1rem;" data-bre-field='{ "name" : "#{name}", "type": "embed" }') &lt; / &gt; Embed
+
+
+//- mixin p(name, classes)    
+//-     +html('p', name, loremIpsum, classes)

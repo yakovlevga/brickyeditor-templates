@@ -1,0 +1,25 @@
+{
+  "name": "brickyeditor-templates",
+  "version": "1.0.0",
+  "description": "The set of BrickyEditor WYIWYG editor templates for popular css frameworks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "brikyeditor",
+    "wysiwyg",
+    "templates",
+    "jquery-plugin"
+  ],
+  "author": "George Yakovlev",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0"
+  },
+  "dependencies": {
+    "brickyeditor": "^0.8.2"
+  }
+}

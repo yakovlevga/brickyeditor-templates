@@ -1,0 +1,25 @@
+include fields.pug
+include constants.pug
+
+mixin group(name)
+    .bre-template-group(title=name)
+        block
+
+mixin template(name)
+    .bre-template(data-name=name)
+        block
+
+mixin preview
+    .bre-template-preview
+        block
+
+mixin t-header(size, name, classes)
+    - var tag = `h${size}`
+    - var name = name || `Header ${size}`
+    +template(name)
+        +html(tag, 'text', name, classes)
+
+mixin t-paragraph(name, classes)
+    - var name = name || 'Paragraph'
+    +template(name)
+        +html('p', 'text', loremIpsum, classes)

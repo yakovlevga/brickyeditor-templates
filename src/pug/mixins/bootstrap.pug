@@ -1,0 +1,27 @@
+include ../mixins/fields.pug
+
+mixin row
+    .row
+        block
+
+mixin col(part)
+    -var size = 12 / part
+    -var classes = [`col-md-${size}`, 'col-sm-12'];
+    div(class=classes)
+        block
+
+mixin col-container(part, name)
+    -var size = 12 / part
+    -var classes = [`col-md-${size}`, 'col-sm-12'];
+    +container(name, classes)
+        block
+
+mixin t-columns(count)
+    - var n = 0;
+    - var templateName = `Columns-${count}`
+    +template(templateName)
+        +row
+            while n < count
+                - n++
+                - var fieldName = `col${n}`;
+                +col-container(count, fieldName)

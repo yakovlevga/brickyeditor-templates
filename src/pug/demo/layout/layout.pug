@@ -1,0 +1,26 @@
+block vars
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title BrickyEditor Template Demo
+
+        block styles
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="lib/jquery.brickyeditor.css" >
+
+        block scripts
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="lib/jquery.brickyeditor.js"></script>
+        script.
+            $(function() {
+                $("#editor").brickyeditor({
+                    templatesUrl: '#{templatesUrl}'
+                });
+            });
+
+    body
+        main(class=containerStyle)
+            block content
+            div#editor

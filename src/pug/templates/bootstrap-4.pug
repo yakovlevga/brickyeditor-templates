@@ -1,0 +1,45 @@
+include ../mixins/templates.pug
+include ../mixins/fields.pug
+include ../mixins/bootstrap.pug
+include ../mixins/constants.pug
+
++group('Containers')
+    +t-columns(2)
+    +t-columns(3)
+    +t-columns(4)
+
++group('Headers')    
+    +t-header(1, 'Display Heading 1', 'display-4')
+    +t-header(1)
+    +t-header(2)
+    +t-header(3)
+    +t-header(4)
+    +t-header(5)
+
++group('Text')
+    +t-paragraph('Paragraph')
+    +t-paragraph('Paragraph Lead', 'lead')
+
++group('Media')
+    +template('Image')
+        .text-center
+            +image('image', undefined, 'mx-auto', 'img-fluid')
+
+    +template('Image with caption')
+        .text-center
+            figure.figure
+                +image('image', undefined, 'figure-img', 'img-fluid')
+                +html('figcaption', 'caption', 'A caption for the above image.', 'figure-caption')
+
+    +template('Embed')
+        center
+            +embed()
+
++group('Widgets')
+    +template('Hero')
+        
+
++template('Line')
+    +preview
+        hr(style='height: 1px;')
+    +html('hr')
